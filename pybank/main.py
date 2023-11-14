@@ -21,7 +21,7 @@ with open(budgetcsv) as csvfile:
         total_months += 1
         this_month = int(row[1])
         total_profit += this_month
-        if total_months > 1:
+        if total_months > 1: #only do this after the first, since there is no previous month
             change_in_profits.append((this_month - last_month)) #get the difference in profits and store it in my list
 
 #borrowed the float syntax from https://stackoverflow.com/questions/455612/limiting-floats-to-two-decimal-points
@@ -34,7 +34,7 @@ min_change = min(change_in_profits)
 #creating an output list that contains all of the strings, since I need to write them to both the screen and a file.
 output_string = []
 
-output_string.append(f"Financial Analysis")
+output_string.append("Financial Analysis")
 output_string.append("")
 output_string.append("----------------------------")
 output_string.append("")
